@@ -1,0 +1,4 @@
+## Title: HeroKillMeter
+## Interface: 80300
+## Notes: Keep count of every mob you kill.
+HeroKillMeter.lua
