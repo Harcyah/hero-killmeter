@@ -1,12 +1,12 @@
 
-local frame = CreateFrame("Frame");
-frame:RegisterEvent("ADDON_LOADED");
-frame:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED");
+local frame = CreateFrame('Frame');
+frame:RegisterEvent('ADDON_LOADED');
+frame:RegisterEvent('COMBAT_LOG_EVENT_UNFILTERED');
 
 local function GetGuid(guid)
 
 	local tokens = {}
-	for match in string.gmatch(guid, "[^-]+") do
+	for match in string.gmatch(guid, '[^-]+') do
 		table.insert(tokens, match)
 	end
 
@@ -20,18 +20,18 @@ local function GetGuid(guid)
 	return result;
 end
 
-frame:SetScript("OnEvent", function(self, event, ...)
+frame:SetScript('OnEvent', function(self, event, ...)
 	local arg = {...}
 
-	if (event == "ADDON_LOADED" and arg[1] == 'HeroKillmeter') then
+	if (event == 'ADDON_LOADED' and arg[1] == 'HeroKillmeter') then
 		if (HeroKillmeterDB == nil) then
 			HeroKillmeterDB = {}
 		end
 	end
 
-	if (event == "COMBAT_LOG_EVENT_UNFILTERED") then
+	if (event == 'COMBAT_LOG_EVENT_UNFILTERED') then
 		local timestamp, subEvent, hideCaster, s_guid, s_name, s_flags, s_raidflags, d_guid, d_name, d_flags, d_raidflags = CombatLogGetCurrentEventInfo()
-		if subEvent == "PARTY_KILL" then
+		if subEvent == 'PARTY_KILL' then
 
 			local guid = GetGuid(d_guid)
 
