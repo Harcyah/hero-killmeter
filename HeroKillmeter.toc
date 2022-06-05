@@ -1,5 +1,5 @@
 ## Title: HeroKillmeter
-## Interface: 90200
+## Interface: 90205
 ## Author: harcyah@gmail.com
 ## Notes: Keep count of every mob you kill.
 ## SavedVariablesPerCharacter: HeroKillmeterDB
